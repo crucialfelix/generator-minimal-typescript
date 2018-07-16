@@ -1,0 +1,34 @@
+{
+  "name": "<%= packageName %>",
+  "description": "",
+  "version": "0.0.0",
+  "author": "<%= author%>",
+  "bugs": "<%= repoUrl%>/issues",
+  "dependencies": {
+    "tslib": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "10.5.2",
+    "ts-node": "latest",
+    "tslint": "latest",
+    "typescript": "latest"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "/lib"
+  ],
+  "homepage": "<%= repoUrl%>",
+  "keywords": [],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "<%= repoUrl%>.git"
+  },
+  "scripts": {
+    "build": "rm -rf lib && tsc"
+  },
+  "types": "lib/index.d.ts"
+}
