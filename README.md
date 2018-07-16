@@ -1,5 +1,5 @@
 # generator-minimal-typescript [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Make a minimal Typescript module, not an app
+> Yeoman generator to make a minimal Typescript module
 
 ## Installation
 
@@ -13,15 +13,48 @@ npm install -g generator-minimal-typescript
 Then generate your new project:
 
 ```bash
+mkdir my-package
+cd my-package
 yo minimal-typescript
 ```
 
+produces:
+```
+.
+├── README.md
+├── package.json
+├── src
+│   └── index.ts
+├── tsconfig.json
+└── tslint.json
+```
+
+dependencies:
+```
+  "dependencies": {
+    "tslib": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "10.5.2",
+    "ts-node": "latest",
+    "tslint": "latest",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "build": "rm -rf lib && tsc"
+  },
+```
+
+Write your TypeScript code in `./src`
+
+Build with `npm run build`
+
+.ts and .tsx (React) files are compiled to `./lib` as `es5` JavaScript, ready to publish to npm.
+
+
 ## Getting To Know Yeoman
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+ * [Learn more about Yeoman](http://yeoman.io/).
 
 ## License
 
