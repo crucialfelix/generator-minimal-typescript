@@ -2,15 +2,15 @@
   "compilerOptions": {
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
     "importHelpers": true,
     "module": "commonjs",
     "outDir": "./lib",
-    "rootDirs": [ "./src" ],
+    "rootDirs": ["./src"],
     "strict": true,
+    "jsx": "preserve",
     "target": "es2017",
-    "typeRoots": [ "./node_modules/@types" ]
+    "typeRoots": ["./node_modules/@types"]
   },
-  "include": [
-    "./src/**/*"
-  ]
+  "include": ["./src/**/*"]
 }
