@@ -21,7 +21,7 @@
   ],
   "homepage": "<%= repoUrl%>",
   "keywords": [],
-  "license": "MIT",
+  "license": "UNLICENSED",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
