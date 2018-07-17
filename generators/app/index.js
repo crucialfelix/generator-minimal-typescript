@@ -3,14 +3,26 @@ const path = require("path");
 const Generator = require("yeoman-generator");
 
 module.exports = class extends Generator {
+  prompting() {
+    this.username = "";
+    return this.prompt({
+      type: "input",
+      name: "username",
+      message: "GitHub username ?",
+      store: true
+    }).then(answers => {
+      this.username = answers.username;
+    });
+  }
+
   writing() {
     let packageName = path.basename(process.cwd());
-    let author = "crucialfelix";
+    let author = this.username;
 
     const filesForCopy = ["src", "tsconfig.json", "tslint.json"];
-    filesForCopy.map(f =>
-      this.fs.copy(this.templatePath(f), this.destinationPath(f))
-    );
+    filesForCopy.forEach(f => {
+      this.fs.copy(this.templatePath(f), this.destinationPath(f));
+    });
 
     const varz = {
       packageName,
